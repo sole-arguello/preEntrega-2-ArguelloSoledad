@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { mFetch } from "../../utils/mFetch";
-
+import { getProductos } from "../../utils/mFetch";
+import { Spinner, Container } from 'react-bootstrap'
 //componentes
 import ItemList from "../ItemList/ItemList";
 
@@ -12,12 +12,10 @@ function ItemsContainer({ greeting }) {
     useEffect(() => {
       
         setTimeout(() => {
-
-            mFetch()
+          getProductos()
             .then((resultado) => {
                 setProductos(resultado)
             })
-
             .catch((error) => console.log(error))
             .finally(() => setIsLoading(false));
 
@@ -28,9 +26,9 @@ function ItemsContainer({ greeting }) {
   return (
     <>
       <h1 className="py-5 text-center">{greeting}</h1>
-      <div className='container'>
-          { isLoading ? <p>Cargando...</p> : <ItemList productos = { productos }/> }
-      </div>
+      <Container>
+          { isLoading ? <div className=" text-center"> <Spinner animation="border" variant="warning" /></div> : <ItemList productos = { productos }/> }
+      </Container>
     </> 
   );
 }

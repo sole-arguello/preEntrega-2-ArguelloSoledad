@@ -1,9 +1,15 @@
 //simulo una DB
-export const mFetch = () => {
+export const getProductos = () => {
     return new Promise((res, rej) => {
       res(productos);
     });
   };
+
+  export const getProductoById = (productoId) => {
+    return new Promise( (res, rej ) =>{
+      res(productos.find( prod => prod.id === productoId))
+    })
+  }
 
 let productos = [
   {

@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 import CartWiget from '../CartWiget/CartWiget'
 
 
 const NavBar = () => {
   return (
+
     <Navbar className='py-4' collapseOnSelect expand="lg" bg="warning" variant="">
       <Container >
         <Navbar.Brand className='fs-2' href="#home">

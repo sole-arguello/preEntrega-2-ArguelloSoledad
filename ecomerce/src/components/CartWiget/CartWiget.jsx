@@ -2,8 +2,9 @@ import React from 'react'
 
 function CartWiget() {
   return (
-    <div>
-       <img className='w-25' src="/public/carretilla.png" alt="carrito de compras" /> 0
+    <div className='d-flex border border-dark p-1 rounded'>
+       <img className='mx-2 ' src="/public/cart4.svg" alt="" style={{ width: '1.5rem'}}/>
+       <h5 className='mx-1'>0</h5>
     </div>
   )
 }
