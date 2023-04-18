@@ -7,7 +7,7 @@ export const getProductos = () => {
 
   export const getProductoById = (id) => {
     return new Promise( (res, rej ) =>{
-      res(productos.filter( prod => prod.id === id))
+      res(productos.find( prod => prod.id === id))
     })
   }
 
@@ -19,7 +19,7 @@ export const getProductos = () => {
 
 let productos = [
   {
-    id: 1,
+    id: '1',
     precio: 1200,
     titulo: "Encaje",
     categoria: "Conjunto",
@@ -27,7 +27,7 @@ let productos = [
     img: "/public/assets/conjunto1.jpg",
   },
   {
-    id: 2,
+    id: '2',
     precio: 1500,
     titulo: "Algodon",
     categoria: "Conjunto",
@@ -35,7 +35,7 @@ let productos = [
     img: "/public/assets/conjunto2.jpg",
   },
   {
-    id: 3,
+    id: '3',
     precio: 2000,
     titulo: "Combinado",
     categoria: "Conjunto",
@@ -43,7 +43,7 @@ let productos = [
     img: "/public/assets/conjunto3.jpg",
   },
   {
-    id: 4,
+    id: '4',
     precio: 2000,
     titulo: "Encaje",
     categoria: "Conjunto",
@@ -51,7 +51,7 @@ let productos = [
     img: "/public/assets/conjunto4.jpg",
   },
   {
-    id: 5,
+    id: '5',
     precio: 1400,
     titulo: "Calado",
     categoria: "Top",
@@ -60,7 +60,7 @@ let productos = [
   },
 
   {
-    id: 6,
+    id: '6',
     precio: 1600,
     titulo: "Encaje",
     categoria: "Top",
@@ -68,7 +68,7 @@ let productos = [
     img: "/public/assets/top2.jpg",
   },
   {
-    id: 7,
+    id: '7',
     precio: 1600,
     titulo: "Combinado",
     categoria: "Top",
@@ -76,7 +76,7 @@ let productos = [
     img: "/public/assets/top3.jpg",
   },
   {
-    id: 8,
+    id: '8',
     precio: 1600,
     titulo: "Calado",
     categoria: "Top",
@@ -85,7 +85,7 @@ let productos = [
   },
 
   {
-    id: 9,
+    id: '9',
     precio: 900,
     titulo: "Maria",
     categoria: "Bombis",
@@ -94,7 +94,7 @@ let productos = [
   },
 
   {
-    id: 10,
+    id: '10',
     precio: 800,
     titulo: "Victoria",
     categoria: "Bombis",
@@ -103,7 +103,7 @@ let productos = [
   },
 
   {
-    id: 11,
+    id: '11',
     precio: 500,
     titulo: "Culote",
     categoria: "Bombis",
@@ -112,7 +112,7 @@ let productos = [
   },
 
   {
-    id: 12,
+    id: '12',
     precio: 450,
     titulo: "Less regulables",
     categoria: "Bombis",
