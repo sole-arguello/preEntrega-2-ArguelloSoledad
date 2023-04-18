@@ -11,20 +11,20 @@ function ItemDetailContainer({greeting}) {
     const [ producto, setProducto ] = useState(null)
     const [ isLoading, setIsLoading ] = useState(true)
 
-    const { itemId } = useParams()
-    console.log(itemId)
+    const { prodId } = useParams()
+    //console.log(prodId)
 
     useEffect(() => {
       setTimeout( () => {
-        getProductoById(itemId)
+        getProductoById(prodId)
         .then( ( resultado ) => {
             setProducto(resultado)
-            console.log(resultado)
+            //console.log(resultado)
         })
         .catch( (err) => console.log(err))
         .finally(() => setIsLoading(false))
       }, 1000)  
-    }, [itemId])
+    }, [prodId])
   return (
     <Container>
         <h1 className='py-5 text-center'>{ greeting }</h1>

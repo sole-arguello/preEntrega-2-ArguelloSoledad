@@ -3,7 +3,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-//import './index.css'
+import './index.css'
 
 
 //equivale app() que viene importado de app funcion y archivo app

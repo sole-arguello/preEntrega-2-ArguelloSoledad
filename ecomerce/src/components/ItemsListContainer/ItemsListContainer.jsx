@@ -11,14 +11,15 @@ function ItemsListContainer({ greeting }) {
     const [productos, setProductos ] = useState([])
     const [isLoading, setIsLoading ] = useState(true)
     
-    const { categId } = useParams()
+    const { prodCateg } = useParams()
     useEffect(() => {
       
         setTimeout(() => {
-          
-            const mockFetch = categId ? getProductByCategory : getProductos
+            //console.log(prodCateg)
 
-            mockFetch(categId)
+            const mockFetch = prodCateg ? getProductByCategory : getProductos
+
+            mockFetch(prodCateg)
               .then(respuesta => {
                 setProductos(respuesta)
               })
@@ -26,7 +27,7 @@ function ItemsListContainer({ greeting }) {
               .finally( () => setIsLoading(false))
         }, 1000);
         
-    }, [categId])
+    }, [prodCateg])
 
   return (
     <>

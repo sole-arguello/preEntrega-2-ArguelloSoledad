@@ -8,7 +8,7 @@ import ItemsListContainer from "./components/ItemsListContainer/ItemsListContain
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 //estilos 
-//import "./App.css";
+import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -18,10 +18,10 @@ function App() {
        <NavBar />
 
        <Routes>
-          <Route path='/' element={<ItemsListContainer greeting= {'Bienvenidos'}/>} />
-          <Route path='/categoria/:categId' element={<ItemsListContainer greeting={'Producto por Categoria'}/>} />
+          <Route path='/' element={<ItemsListContainer greeting= {'Todos los Productos'}/>} />
+          <Route path='/categoria/:prodCateg' element={<ItemsListContainer greeting={'Producto por Categoria'}/>} />
           
-          <Route path='/item/:itemId' element={<ItemDetailContainer greeting= {'Detalle del producto'}/>} />
+          <Route path='/item/:prodId' element={<ItemDetailContainer greeting= {'Detalle del producto'}/>} />
 
 
           <Route path='*' element={ <Navigate to='/'/> }/>
