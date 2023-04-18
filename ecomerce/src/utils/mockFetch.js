@@ -5,9 +5,15 @@ export const getProductos = () => {
     });
   };
 
-  export const getProductoById = (productoId) => {
+  export const getProductoById = (id) => {
     return new Promise( (res, rej ) =>{
-      res(productos.find( prod => prod.id === productoId))
+      res(productos.find( prod => prod.id === id))
+    })
+  }
+
+  export const getProductByCategory = (category) => {
+    return new Promise ( (res, rej) => {
+      res( productos.filter(prod => prod.categoria === category))
     })
   }
 
@@ -15,7 +21,7 @@ let productos = [
   {
     id: 1,
     precio: 1200,
-    titulo: "Conjunto Encaje",
+    titulo: "Encaje",
     categoria: "Conjunto",
     cantidad: 1,
     img: "/public/assets/conjunto1.jpg",
@@ -23,7 +29,7 @@ let productos = [
   {
     id: 2,
     precio: 1500,
-    titulo: "Conjunto Algodon",
+    titulo: "Algodon",
     categoria: "Conjunto",
     cantidad: 1,
     img: "/public/assets/conjunto2.jpg",
@@ -31,7 +37,7 @@ let productos = [
   {
     id: 3,
     precio: 2000,
-    titulo: "Conjunto Combinado",
+    titulo: "Combinado",
     categoria: "Conjunto",
     cantidad: 1,
     img: "/public/assets/conjunto3.jpg",
@@ -39,7 +45,7 @@ let productos = [
   {
     id: 4,
     precio: 2000,
-    titulo: "Conjunto Encaje",
+    titulo: "Encaje",
     categoria: "Conjunto",
     cantidad: 1,
     img: "/public/assets/conjunto4.jpg",
@@ -47,7 +53,7 @@ let productos = [
   {
     id: 5,
     precio: 1400,
-    titulo: "Top Calado",
+    titulo: "Calado",
     categoria: "Top",
     cantidad: 1,
     img: "/public/assets/top1.jpg",
@@ -56,7 +62,7 @@ let productos = [
   {
     id: 6,
     precio: 1600,
-    titulo: "Top Encaje",
+    titulo: "Encaje",
     categoria: "Top",
     cantidad: 1,
     img: "/public/assets/top2.jpg",
@@ -64,7 +70,7 @@ let productos = [
   {
     id: 7,
     precio: 1600,
-    titulo: "Top Combinado",
+    titulo: "Combinado",
     categoria: "Top",
     cantidad: 1,
     img: "/public/assets/top3.jpg",
@@ -72,7 +78,7 @@ let productos = [
   {
     id: 8,
     precio: 1600,
-    titulo: "Top Calado",
+    titulo: "Calado",
     categoria: "Top",
     cantidad: 1,
     img: "/public/assets/top4.jpg",
@@ -81,7 +87,7 @@ let productos = [
   {
     id: 9,
     precio: 900,
-    titulo: "Bombis Maria",
+    titulo: "Maria",
     categoria: "Bombis",
     cantidad: 1,
     img: "/public/assets/bombis1.jpg",
@@ -90,7 +96,7 @@ let productos = [
   {
     id: 10,
     precio: 800,
-    titulo: "Bombis Victoria",
+    titulo: "Victoria",
     categoria: "Bombis",
     cantidad: 1,
     img: "/public/assets/bombis2.jpg",
@@ -99,7 +105,7 @@ let productos = [
   {
     id: 11,
     precio: 500,
-    titulo: "Bombis Culote",
+    titulo: "Culote",
     categoria: "Bombis",
     cantidad: 1,
     img: "/public/assets/bombis3.jpg",
@@ -108,7 +114,7 @@ let productos = [
   {
     id: 12,
     precio: 450,
-    titulo: "Bombis Less regulables",
+    titulo: "Less regulables",
     categoria: "Bombis",
     cantidad: 1,
     img: "/public/assets/bombis4.jpg",

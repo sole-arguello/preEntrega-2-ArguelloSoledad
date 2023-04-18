@@ -1,32 +1,38 @@
-
 import { useEffect, useState } from 'react'
-import { getProductoById } from '../../utils/mFetch'
+import { getProductoById } from '../../utils/mockFetch'
+import { useParams } from 'react-router-dom'
 import { Container, Spinner } from 'react-bootstrap'
-import ItemDitail from '../ItemDitail/ItemDitail'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 
-function ItemDitailContainer({greeting}) {
+
+function ItemDetailContainer({greeting}) {
 
     const [ producto, setProducto ] = useState(null)
     const [ isLoading, setIsLoading ] = useState(true)
 
+    const { itemId } = useParams()
+    console.log(itemId)
+
     useEffect(() => {
       setTimeout( () => {
-        getProductoById(1)
+        getProductoById(itemId)
         .then( ( resultado ) => {
             setProducto(resultado)
             //console.log(producto)
         })
         .catch( (err) => console.log(err))
         .finally(() => setIsLoading(false))
-      }, 2000)  
-    }, [])
+      }, 1000)  
+    }, [itemId])
   return (
     <Container>
         <h1 className='py-5 text-center'>{ greeting }</h1>
-        { isLoading ? <div className='text-center'><Spinner animation="border" variant="warning" /></div> : <ItemDitail {...producto}/> }  
+        { isLoading 
+        ? <div className='text-center'><Spinner animation="border" variant="warning" /></div> 
+        : <ItemDetail {...producto}/> }  
     </Container>
   )
 }
 
-export default ItemDitailContainer
+export default ItemDetailContainer

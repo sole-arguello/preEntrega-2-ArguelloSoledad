@@ -1,28 +1,33 @@
 //librerias 
-import { useRef, useState } from "react";
-import { useEffect } from "react";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 
 //componentes creados por mi 
 import NavBar from "./components/NavBar/NavBar";
-import ItemsContainer from "./components/ItemsListContainer/ItemsListContainer";
-import ItemCount from "./components/ItemCount/ItemCount";
-import ItemDitailContainer from "./components/ItemDitailContainer/ItemDitailContainer";
+import ItemsListContainer from "./components/ItemsListContainer/ItemsListContainer";
+//import ItemCount from "./components/ItemCount/ItemCount";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 //estilos 
 //import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
 function App() {
 
   return ( 
-    <>
-      <NavBar />
-      {/* <ItemsContainer greeting={'Bienvenidos'}/> */}
-      <ItemDitailContainer greeting='Un Producto'/>
-    </>
+    <BrowserRouter>
+       <NavBar />
+
+       <Routes>
+          <Route path='/' element={<ItemsListContainer greeting= {'Bienvenidos'}/>} />
+          <Route path='/categoria/:categId' element={<ItemsListContainer greeting={'Producto por Categoria'}/>} />
+          
+          <Route path='/item/itemId' element={<ItemDetailContainer greeting= {'Detalle del producto'}/>} />
+
+
+          <Route path='*' element={ <Navigate to='/'/> }/>
+       </Routes>
+      
+    </BrowserRouter>
   );
 }
 
