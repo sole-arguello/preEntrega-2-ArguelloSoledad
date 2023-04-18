@@ -7,7 +7,7 @@ export const getProductos = () => {
 
   export const getProductoById = (id) => {
     return new Promise( (res, rej ) =>{
-      res(productos.find( prod => prod.id === id))
+      res(productos.filter( prod => prod.id === id))
     })
   }
 

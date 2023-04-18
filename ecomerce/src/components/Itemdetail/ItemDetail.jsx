@@ -4,6 +4,7 @@ import ItemCount from '../ItemCount/ItemCount'
 
 
 function ItemDetail({img, titulo, precio, categoria}) {
+
   return (
     <Card className='container d-flex flex-md-row py-3'>
          

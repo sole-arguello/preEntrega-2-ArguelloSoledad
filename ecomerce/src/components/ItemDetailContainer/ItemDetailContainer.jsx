@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { getProductoById } from '../../utils/mockFetch'
 import { useParams } from 'react-router-dom'
 import { Container, Spinner } from 'react-bootstrap'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { getProductoById } from '../../utils/mockFetch'
 
 
 
@@ -19,7 +19,7 @@ function ItemDetailContainer({greeting}) {
         getProductoById(itemId)
         .then( ( resultado ) => {
             setProducto(resultado)
-            //console.log(producto)
+            console.log(resultado)
         })
         .catch( (err) => console.log(err))
         .finally(() => setIsLoading(false))
