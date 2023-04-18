@@ -21,7 +21,7 @@ function App() {
           <Route path='/' element={<ItemsListContainer greeting= {'Bienvenidos'}/>} />
           <Route path='/categoria/:categId' element={<ItemsListContainer greeting={'Producto por Categoria'}/>} />
           
-          <Route path='/item/itemId' element={<ItemDetailContainer greeting= {'Detalle del producto'}/>} />
+          <Route path='/item/:itemId' element={<ItemDetailContainer greeting= {'Detalle del producto'}/>} />
 
 
           <Route path='*' element={ <Navigate to='/'/> }/>

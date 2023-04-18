@@ -9,7 +9,7 @@ function ItemDetail({img, titulo, precio, categoria}) {
          
         <Card.Img variant='' src={img} alt="imagen del producto" />
         <Container className=''>
-          <Card.Title className='fs-4 '>{categoria} {titulo}</Card.Title>
+          <Card.Title className='fs-4'>{categoria} {titulo}</Card.Title>
           <Card.Text className='fs-5'>Precio: ${precio}</Card.Text>
             <Card.Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Magnam natus dolore praesentium officiis! In nam aperiam atque tenetur, 
